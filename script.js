@@ -6,7 +6,10 @@ document.addEventListener('DOMContentLoaded', function () {
             data.forEach(repo => {
                 const project = document.createElement('div');
                 project.classList.add('project');
-                if (repo.name != 'GustHLS'){
+
+                reposvisual = ['GustHLS', 'portfolio']
+
+                if (!reposvisual.includes(repo.name)){
                     project.innerHTML = `
                         <h3><a href="${repo.html_url}" target="_blank">${repo.name}</a></h3>
                         <p>${repo.description || 'No description provided'}</p>
